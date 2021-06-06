@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>no escape/works</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" 
+      type="image/png" 
+      href="imgs/arrow.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+<script>
+    $(window).scroll(function() {
+  
+  // selectors
+  var $window = $(window),
+      $body = $('body'),
+      $panel = $('.panel');
+  
+  // Change 33% earlier than scroll position so colour is there when you arrive.
+  var scroll = $window.scrollTop() + ($window.height() / 3);
+ 
+  $panel.each(function () {
+    var $this = $(this);
+    
+    // if position is within range of this panel.
+    // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+    // Remember we set the scroll to 33% earlier in scroll var.
+    if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+          
+      // Remove all classes on body with color-
+      $body.removeClass(function (index, css) {
+        return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+      });
+       
+      // Add class of currently active div
+      $body.addClass('color-' + $(this).data('color'));
+    }
+  });    
+  
+}).scroll();
+    
+</script>
+    
+<!--    <script src="script.js"></script>-->
+</head>
+<body>
+    
+<div class="panel" data-color="cover">
+<div class="row">  
+    <div class="col-2">
+    </div>    
+<div class="col-8-app">
+    <h3 id="cover">try to escape !</h3>
+</div>
+    <div class="col-2">
+    </div>
+</div>
+</div>
+
+<!----floating nav---->
+    
+<!--
+<div id="navbar">
+<a href="javascript:void(0)" target="_blank">Contact</a>
+  <a href="javascript:void(0)" target="_blank">AppleStore</a>
+  <a href="javascript:void(0)" target="_blank">GooglePlay</a>
+  <a href="https://fedsquare.com/" target="_blank">FedSquare</a>
+</div>
+-->
+    
+<!----sticky sidebar---->
+
+
+<div class="sidenav">
+  <a href="DearPhil/index.html">Home</a>
+  <a href="">no escape!<br>won't escape?</a>
+  <a href="#creativepractice">Creative Practice</a>
+  <!-- <a href="#collaboration">Collabora -tion</a>
+  <a href="#skills">Essential Skills</a> -->
+</div>
+
+
+
+    
+
+<!----intro---->
+<!--
+<div class="header">
+    <img src="imgs/monsterworldtourtitle.png" width="396" height="216">
+    <h2>welcome</h2>
+    <p>welcome join us this Halloween</p>
+</div>
+-->
+
+
+
+    
+<!----main---->
+<!--
+<div class="content">
+    <img src="imgs/Artboard%20210-215.png" width="500" height="500">
+</div>
+-->
+
+ 
+    
+<!--
+<div class="row">
+    <div class="part1">
+        <img src="imgs/happy%20219-187.png" width="219" height="187">
+    </div>
+    
+    <div class="part2">
+        <h1>Video</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SMbLqonLhR8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+-->
+    
+<!--
+<div class="row">  
+    <div class="col-4-app">
+        <iframe width="248" height="540" src="https://www.youtube.com/embed/G-6MEmifxe4?autoplay=1&mute=1&playlist=G-6MEmifxe4&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    <div class="col-4-app">
+        <img src="imgs/home.png" width="249">
+        <img src="imgs/library1.png" width="249">
+        <img src="imgs/library2.png" width="249">
+        <img src="imgs/me.png" width="249">
+        <img src="imgs/nav1.png" width="249">
+        <img src="imgs/nav2.png" width="249">
+        <img src="imgs/team1.png" width="249">
+        <img src="imgs/team2.png" width="249">
+
+        <iframe src="slideshow.html" width="248" height="540" style="border:none; background-color: black"></iframe>
+
+    </div>
+    <div class="col-4-app">
+        <iframe src="slideshowWhite.html" width="248" height="540" style="border:none; background-color: black"></iframe>
+    </div>
+    
+</div>
+-->
+    
+    
+
+    
+    
+<!--
+<div class="row">  
+    <div class="col-2">
+
+    </div>   
+    <div class="col-8-app">
+        <iframe width="248" height="540" src="https://www.youtube.com/embed/G-6MEmifxe4?autoplay=1&mute=1&playlist=G-6MEmifxe4&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="slideshow.html" width="248" height="540" style="border:none; background-color: black"></iframe>
+        <iframe src="slideshowWhite.html" width="248" height="540" style="border:none; background-color: black"></iframe>
+
+    </div>
+    <div class="col-2">
+        
+    </div>  
+</div>    
+-->
+
+    
+
+
+
+
+
+    
+
+    <div class="row">
+        <div class="col-12-app">
+            <iframe src="https://i.simmer.io/@dgjjj1012ti/no-escape" style="width:960px;height:540px">
+            </iframe>
+        </div>
+    </div>
+
+    
+<div class="panel" data-color="violet">
+<div class="row">  
+    <div class="col-2">
+    </div>    
+<div class="col-8-app">
+    <img src="imgs/play guide-01.png" width="30%">
+    <p style="font-size: 32px;"><b>No escape! Won't escape?</b></p>
+    <p>What does the digital body mean to us? I inquire that question with this unique interactive 3D environment. This is a room that you can not escape. 
+        I put my interest in social media, which was emerging in the recent decade, along with Web 2.0.<br>
+        We are living in a highly digitalized world, where deconstruction and reconstruction are continuously in process. 
+        We get to know someone through comments online through content people posted on social media. 
+        What we encounter is not 'the person' anymore, but the digital bodies presented to us. 
+        And, the same person's digital body can be contrasting for different audiences.<br>
+        Are we all like the player, deconstructing each others' identities, meanwhile being deconstructed by others, and trapped in social media, no escape? Or is it the right question to raise?</p>
+    <p id="btw">by the way, you do not have control on end or start this digital space (well, at least in this webpage), this is by purpose, no escape.</p>
+    <a href="https://gujied.itch.io/no-escape" target="_blank" ><p id="btw">play on itch.io</p></a>
+    <a href="https://youtu.be/TW1C549_QIU" target="_blank" ><p id="btw">recording of earlier version</p></a>
+</div>
+    <div class="col-2">
+    </div>
+</div>
+</div>
+    
+
+
+    
+
+<div class="panel" data-color="indigo">
+<div class="row">  
+    <div class="col-2">
+    </div>    
+<div class="col-8">
+    <div id="creativepractice" style="margin-top: 24px;"></div>
+    <h4>Creative Practice</h4>
+        <img src="imgs/storybord.png" width="100%">
+        <img src="imgs/process.png" width="100%">
+        <img src="imgs/storyboard1.png" width="100%">
+        <img src="imgs/storyboard2.png" width="100%">
+</div>
+    <div class="col-2">
+    </div>
+</div>
+</div> 
+
+
+<div class="panel" data-color="violet">
+
+</div>
+    
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+    
+    
+
+</script>
+
+</body>
+</html>
+

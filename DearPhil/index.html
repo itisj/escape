@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/icon.png" sizes="16x16">
+    <title>Dear Phil</title>
+
+    <style>
+.container {
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  margin: -10px;
+}
+
+#player {
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  padding: 0%;
+  opacity: 1;
+}
+@keyframes animate {
+    0%{
+       transform: rotateY(0deg);
+       transform: scale(80%);
+    }
+    100%{
+        transform: rotateY(360deg);
+        transform: scale(200%);
+    }
+}
+/* @keyframes disappear{
+  from {opacity: 1;}
+  to {opacity: 0;}
+} */
+
+body {
+  background-color: rgb(145, 145, 145);
+  
+}
+    </style>
+  </head>
+  <body>
+    <audio id="audio" src="conversation.mp3"></audio>
+
+    
+
+    <div class="container" onclick="play()">
+
+      <!-- <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDgzNTUyMTE2MjYxNTA5?igshid=adia4gemfgt3" target="_blank">
+        <img src="images/ins icon.png" width="50" height="50" style="position:fixed; top: 10%; right: 20%; opacity: 0.1;">
+      </a> -->
+      <div id="player" onclick="opacity()" ></div>
+
+    </div>
+
+
+
+
+    <script>
+
+      // function display() {
+      //   document.getElementById("player");
+      //   if (this.element.style.opacity = 0) {
+      //     this.element.style.display = null;
+      //   }
+      //   else {
+
+      //   }
+      // }
+
+
+      function opacity() {
+        document.getElementById("player").animate([
+          // keyframes
+          { opacity: 1 },
+          { opacity: 0.5 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+          { opacity: 0 },
+        ], {
+
+          duration: 100000,
+        });
+        
+        if (this.element.style.opacity = 0) {
+          this.element.style.display = null;
+        }
+        else {
+
+        }
+      }
+    
+      function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
+
+      class ClickListener {
+        constructor() {
+          this.rootElement = document.querySelector( "#player" );
+          this.element = document.createElement("img");
+          this.rootElement.appendChild(this.element);
+          this.images = [
+          'images/flower1.png',
+          'images/flower1.png',
+          'images/letter1.png',
+          'images/letter2.png',
+          'images/chair.png',
+          ]
+          this.idx = 0
+          this.init()
+        }
+
+        init() {
+          this.element.src = this.images[this.idx]
+          this.element.style.width = '810px';
+          this.element.style.height = '650px';
+          this.element.onclick = this.nextImage.bind(this)
+        }
+
+        nextImage() {
+          this.idx++;
+          if(this.idx >= this.images.length) {
+            this.idx = 1;
+          }
+          this.element.src = this.images[this.idx]
+        }
+
+      }
+      new ClickListener()
+    </script>
+  </body>
+</html>

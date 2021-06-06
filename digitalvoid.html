@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Digital Void</title>
+    <link rel="icon" href="img/Day15.png" type="image/gif" sizes="16x16">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+<!--    <script src="sketch.js"></script>-->
+<style>
+
+html {
+  background-color: rgb(0, 0, 0);
+}
+
+</style>
+</head>
+
+<body onclick="play()">
+  
+  <audio id="audio" src="noise.mp3"></audio>
+
+
+<script>
+
+function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
+
+let pixel = []
+
+function setup() {
+  createCanvas(windowWidth-8, windowHeight-20);
+  // noLoop();
+  for (let i = 0; i < random(600, 1200); i++) {
+    pixel.push(new Particle(random(-100, 200), random(0, 600)))
+  }
+}
+
+function draw() {
+  background(0);
+  
+  for (let i = 0; i < pixel.length; i++) {
+    pixel[i].show();
+    pixel[i].update();
+  }
+  stroke(255)
+  strokeWeight(1)
+  line(windowWidth/2, -100, windowWidth/2, windowHeight+100);
+  
+  // for (let i = 100; i < 300; i++) {
+  // let r = random(200, 600);
+  // stroke(0, 255, 170);
+  // line(200, i, r, i);
+  // // point(r+200, i);
+  // }
+}
+
+function mousePressed() {
+  for (let i = 0; i < random(10, 20); i++) {
+    pixel.push(new Particle(random(-150, 0), random(0, 600)))
+  }
+}
+
+// function mouseReleased() {
+//   noLoop();
+// }
+
+class Particle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.history = [];
+  }
+  
+  update() {
+    this.x = this.x + 10 + random(-20, 20);
+    this.y = this.y + random(-50, 50);
+    
+    let v = createVector(this.x, this.y);
+    
+    this.history.push(v);
+    
+    if (this.history.length > 50) {
+      this.history.splice(0, 1);
+    }
+  }
+  
+  show() {
+    beginShape();
+    for (let i = 0; i < this.history.length; i++) {
+      let pos = this.history[i];
+      stroke(cos(this.x/300)*300, sin(this.x*this.y/200)*500, sin(this.y/260)*600);
+      rect(pos.x, pos.y, 0.1);
+      // noise
+      // stroke(cos(this.x/300)*300, sin(this.x*this.y/200)*500, sin(this.y/260)*600);
+      // rect(random(width), random(height), 0.4);
+      // noise
+      // stroke(255, 28, 0);
+      // strokeWeight(1)
+      // point(pos.x-100, pos.y);
+      // stroke(0, 10, 255);
+      // strokeWeight(1)
+      // point(pos.y, pos.x-100);
+      endShape();
+    }
+  }
+}
+
+</script>
+      
+  </body>
+</html>
